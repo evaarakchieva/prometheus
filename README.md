@@ -1,4 +1,4 @@
 # Linux virtual machines monitoring 
 ### Script for Prometheus server installation
 ### Script for Node Exporter installation
-### Terraform scripts that automatically create Ubuntu VMs in Yandex Cloud and run Prometheus installation scripts
+### Terraform configuration file that automatically creates Ubuntu VMs in Yandex Cloud and runs Prometheus installation scripts for server and targets
