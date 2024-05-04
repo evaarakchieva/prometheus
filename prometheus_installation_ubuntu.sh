@@ -14,11 +14,11 @@ mkdir -p $TSDATA_FOLDER_PROMETHEUS
 mv prometheus /usr/bin/
 rm -rf /tmp/prometheus*
 
-#-----------------------------------------
+#--------------------------------------------------------------------
 #
 # prometheus configuration (vm addresses should be added before use)
 #
-#-----------------------------------------
+#--------------------------------------------------------------------
 
 cat <<EOF> $CONFIG_FOLDER_PROMETHEUS/prometheus.yml
 global:
@@ -44,11 +44,11 @@ chown prometheus:prometheus $TSDATA_FOLDER_PROMETHEUS
 
 
 
-#-----------------------------------------
+#-----------------------------
 #
 # prometheus as Linux service
 #
-#-----------------------------------------
+#-----------------------------
 
 cat <<EOF> /etc/systemd/system/prometheus.service
 [Unit]
