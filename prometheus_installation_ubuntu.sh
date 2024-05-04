@@ -5,10 +5,10 @@ TSDATA_FOLDER_PROMETHEUS="/etc/prometheus/data"
 
 cd /tmp
 wget https://github.com/prometheus/prometheus/releases/download/v2.51.2/prometheus-2.51.2.linux-amd64.tar.gz
-tar xvfz prometheus-$PROMETHEUS_VERSION.linux-amd64.tar.gz
-cd prometheus-$PROMETHEUS_VERSION.linux-amd64
+tar xvfz prometheus-$VERSION_PROMETHEUS.linux-amd64.tar.gz
+cd prometheus-$VERSION_PROMETHEUS.linux-amd64
 
-mkdir -p $CONFIG_FOLDER_PROMETHEU
+mkdir -p $CONFIG_FOLDER_PROMETHEUS
 mkdir -p $TSDATA_FOLDER_PROMETHEUS
 
 mv prometheus /usr/bin/
@@ -20,7 +20,7 @@ rm -rf /tmp/prometheus*
 #
 #-----------------------------------------
 
-cat <<EOF> $PROMETHEUS_FOLDER_CONFIG/prometheus.yml
+cat <<EOF> $CONFIG_FOLDER_PROMETHEUS/prometheus.yml
 global:
   scrape_interval: 15s
 
@@ -55,8 +55,8 @@ Group=prometheus
 Type=simple
 Restart=on-failure
 ExecStart=/usr/bin/prometheus \
-  --config.file       ${PROMETHEUS_FOLDER_CONFIG}/prometheus.yml \
-  --storage.tsdb.path ${PROMETHEUS_FOLDER_TSDATA}
+  --config.file       ${CONFIG_FOLDER_PROMETHEUS}/prometheus.yml \
+  --storage.tsdb.path ${TSDATA_FOLDER_PROMETHEUS}
 
 [Install]
 WantedBy=multi-user.target
