@@ -16,7 +16,7 @@ rm -rf /tmp/prometheus*
 
 #-----------------------------------------
 #
-# prometheus configuration
+# prometheus configuration (vm addresses should be added before use)
 #
 #-----------------------------------------
 
@@ -28,6 +28,12 @@ scrape_configs:
   - job_name      : "prometheus"
     static_configs:
       - targets: ["localhost:9090"]
+  - job_name      : "ubuntu-servers"
+    static_configs:
+      - targets:
+        - "ip_address:port"
+        - "ip_address:port"
+        - "ip_address:port"
 EOF
 
 useradd -rs /bin/false prometheus
