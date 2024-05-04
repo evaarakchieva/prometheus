@@ -22,7 +22,7 @@ rm -rf /tmp/prometheus*
 
 cat <<EOF> $CONFIG_FOLDER_PROMETHEUS/prometheus.yml
 global:
-  scrape_interval: 15s
+  scrape_interval: 10s
 
 scrape_configs:
   - job_name      : "prometheus"
